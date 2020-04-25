@@ -47,8 +47,11 @@ def get_articles(id):
 
     get_articles_url = articles_url.format(id, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
-        get_articles_response = json.loads(url.read())
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
+
         news_articles_results = None
+
         if get_articles_response['articles']:
             news_articles_results_list = get_articles_response['articles']
             news_articles_results = process_articles(news_articles_results_list)
