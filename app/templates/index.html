@@ -7,12 +7,67 @@
 {% endblock %}
 
 {% block content %}
+<div class="jumbotron card card-image" style="background-image: url();">
+    <div class="text-white text-center py-5 px-4">
+      <div>
+        <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>NEWS HIGHLIGHTS</strong></h2>
+        <p class="mx-5 mb-5">Get up to date with the latest news</p>
+        <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i> View project</a>
+      </div>
+    </div>
+  </div>
     <div class="row">
         <div class="col-md-12">
             <h1 style="text-align: center;">General</h1>
+            <hr>
         </div>
     </div>
     <div class="row">
         {{ macro.displayNewsSources(general) }}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align: center;">Business</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        {{ macro.displayNewsSources(business) }}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align: center;">Technology</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        {{ macro.displayNewsSources(technology) }}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align: center;">Sports</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        {{ macro.displayNewsSources(sports) }}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align: center;">Entertainment</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        {{ macro.displayNewsSources(entertainment) }}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align: center;">Health</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        {{ macro.displayNewsSources(health) }}
     </div>
 {% endblock %}
