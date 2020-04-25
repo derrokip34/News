@@ -4,12 +4,14 @@ from .models import Sources,Articles
 api_key = None
 sources_url = None
 articles_url = None
+headlines_url = None
 
 def configure_request(app):
-    global api_key,sources_url,articles_url
+    global api_key,sources_url,articles_url,headlines_url
     api_key = app.config['NEWS_API_KEY']
     sources_url = app.config['NEWS_SOURCES_URL']
     articles_url = app.config['NEWS_ARTICLES_URL']
+    headlines_url = app.config['TOP_HEADLINES_URL']
 
 def get_sources(category):
 
@@ -76,3 +78,19 @@ def process_articles(news_articles_list):
             news_articles_results.append(news_articles_object)
 
     return news_articles_results
+
+def get_headlines(limit):
+
+    get_headlines_url = headlines_url.format(limit, api_key)
+
+    with urllib.request.urlopen(get_headlines_url) as url:
+        get_headlines_data = url.read()
+        get_headlines_response = json.loads(get_headlines_data)
+
+        headlines_results = None
+
+        if get_headlines_response['articles']:
+            headlines_results_list = get_headlines_response['articles']
+            headlines_results = process_articles(headlines_results_list)
+
+    return headlines_results
