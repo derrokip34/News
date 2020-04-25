@@ -1,6 +1,6 @@
 from flask import render_template
 from . import main
-from ..requests import get_sources,get_articles
+from ..requests import get_sources,get_articles,get_headlines
 from ..models import Sources,Articles
 
 @main.route('/')
@@ -24,3 +24,11 @@ def show_articles(id):
     title = f'{id}'
 
     return render_template('articles.html', title = title, news = news_articles)
+
+@main.route('/headlines&<int:per_page>')
+def headlines(per_page):
+
+    top_headlines = get_headlines(per_page)
+    title = 'Top headlines'
+
+    return render_template('headlines.html', title = title, articles = top_headlines)
