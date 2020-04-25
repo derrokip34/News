@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{{ super() }}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        {% for article in news %}
+        <div class="card">
+            <img class="card-img-top" src="{{article.urlToImage}}">
+            <div class="card-body">
+                <h3 class="card-title">{{article.title}}</h3>
+                <p class="card-text">Published by {{article.author}}</p>
+                <p class="card-text">Published on {{article.publishedAt}}</p>
+                <p class="card-text">{{article.description|truncate(100)}}</p>
+                <a href="{{article.url}}"><i class="fas fa-clone left"></i>View full article</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

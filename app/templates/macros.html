@@ -6,8 +6,8 @@
     <div class="card mb-3">
         <div class="card-header">{{source.name}}</div>
         <div class="card-body">
-            <p class="card-text">{{source.description}}</p>
-
+            <p class="card-text">{{source.description|truncate(100)}}</p>
+            <p class="card-text"><a href="/articles/{{source.id}}">Read more</a></p>
         </div>
     </div>
 </div>
