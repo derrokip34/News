@@ -1,0 +1,16 @@
+{% macro displayNewsSources(new_sources_list) %}
+
+
+{% for source in new_sources_list %}
+<div class="col-md-4">
+    <div class="card mb-3">
+        <div class="card-header">{{source.name}}</div>
+        <div class="card-body">
+            <p class="card-text">{{source.description}}</p>
+
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endmacro %}
