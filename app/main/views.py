@@ -26,9 +26,9 @@ def show_articles(id):
     return render_template('articles.html', title = title, news = news_articles)
 
 @main.route('/headlines&<int:per_page>')
-def headlines(per_page):
+def news_headlines(per_page):
 
     top_headlines = get_headlines(per_page)
     title = 'Top headlines'
 
-    return render_template('headlines.html', title = title, articles = top_headlines)
+    return render_template('headlines.html', title = title,  headlines = top_headlines)
