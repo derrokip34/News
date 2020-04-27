@@ -51,4 +51,5 @@ The app will show articles from sources links and top headlines
 ## BUGS
 There are no known bugs at the moment
 
-[MIT License]()
+## LICENSE & COPYRIGHT INFORMATION
+[MIT License](https://github.com/derrokip34/News/blob/master/license.md)
