@@ -2,8 +2,10 @@
 {% import 'macros.html' as macro %}
 {% block styles %}
 {{ super() }}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -12,7 +14,7 @@
       <div>
         <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>NEWS HIGHLIGHTS</strong></h2>
         <p class="mx-5 mb-5">Get up to date with the latest news</p>
-        <a href="/headlines&20" class="btn btn-outline-white btn-md">HEADLINES</a>
+        <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i>HEADLINES</a>
       </div>
     </div>
   </div>

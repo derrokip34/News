@@ -2,23 +2,45 @@
 
 {% block styles %}
 {{ super() }}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-4">
+<div class="jumbotron card card-image" style="background-image: url(https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);">
+    <div class="text-white text-center py-5 px-4">
+      <div>
+        <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>READ STORIES FROM YOUR FAVOURITE NEWS SOURCES</strong></h2>
+        <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i>HEADLINES</a>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <hr>
+    <div class="row">
         {% for article in news %}
-        <div class="card mb-3">
-            <img class="card-img-top" src="{{article.urlToImage}}">
-            <div class="card-body">
-                <h3 class="card-title">{{article.title}}</h3>
-                <p class="card-text">Published by {{article.author}}</p>
-                <p class="card-text">Published on {{article.publishedAt}}</p>
-                <p class="card-text">{{article.description|truncate(100)}}</p>
-                <a href="{{article.url}}"><i class="fas fa-clone left"></i>View full article</a>
-            </div>
+        <div class="col-md-4 mb-3">
+<div class="card">
+    <div class="view overlay">
+      <img class="card-img-top" alt="" src="{{article.urlToImage}}">
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{article.title}}</h4>
+      <hr>
+      <p class="card-text" style="font-weight: bold;">Published by {{article.author}}</p>
+      <p class="card-text" style="font-weight: bold;">Published on {{article.publishedAt}}</p>
+      <p class="card-text">{{article.description}}</p>
+      <a href="{{article.url}}" class="black-text d-flex justify-content-end">
+        <h5>Read more <i class="fa fa-angle-double-right"></i></h5>
+      </a>  
+    </div>
+  </div>
         </div>
         {% endfor %}
     </div>
